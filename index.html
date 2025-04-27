@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Appointment Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="overlay">
+        <header>
+            <h1>🏥 Hospital Appointment Booking System</h1>
+        </header>
+
+        <main>
+            <section class="content">
+                <h2>Software Requirements Specification (SRS)</h2>
+                <p><strong>Version 1.0</strong></p>
+                <p><strong>Formal Methods in Software Engineering</strong><br>
+                    Instructor: Sir Muneeb Ahmed</p>
+
+                <p><strong>Prepared by:</strong><br>Hifza Khalid (SU92-BSSEM-F22-202)</p>
+                <p><strong>Section:</strong> BSSE-6D<br>
+                    <strong>Submission Date:</strong> April 28, 2025<br>
+                    <strong>Department:</strong> Software Engineering
+                </p>
+
+                <p><strong>Superior University Gold Campus, Lahore</strong></p>
+
+                <h2>Abstract</h2>
+                <p>The Hospital Appointment Booking System is developed to streamline the process of booking, updating,
+                    viewing, and canceling appointments in hospitals. It addresses the problems of long queues and
+                    mismanagement by allowing patients to book appointments remotely and enabling hospital staff to
+                    manage schedules efficiently. The system ensures data accuracy, reduces patient waiting time, and
+                    improves overall healthcare service quality.</p>
+
+                <h2>Acknowledgement</h2>
+                <p>I would like to extend my sincere thanks to Sir Muneeb Ahmed for his guidance in Z Language for
+                    requirement gathering, and to Sir Tayyab Khushi for his support with the Python implementation of
+                    the project. I am also grateful to my friends who participated in the Google form for requirement
+                    gathering and to the faculty at [Hospital Name] for their cooperation during my visit on April 23,
+                    2025, which was crucial for understanding the current hospital system. Lastly, I deeply appreciate
+                    the unwavering support and encouragement from my family, which motivated me to successfully complete
+                    this project.</p>
+
+                <h2>1. Introduction</h2>
+                <h3>1.1 The Hospital Appointment Booking System</h3>
+                <p>The best way to see how the ideas of formal specification work is through a simple but realistic
+                    example. For this purpose, I have chosen a system that is frequently encountered in healthcare
+                    settings — a Hospital Appointment Booking System. It maintains records of appointments ensuring no
+                    double-bookings or unavailable time slots.</p>
+
+                <h4>1.1.1 Basic Types</h4>
+                <p>[PATIENT, TIME]</p>
+
+                <h4>1.1.2 State Space</h4>
+                <p>The state of the system is described using a Z schema representing current appointment bookings.</p>
+
+                <h4>1.1.3 Invariant Explanation</h4>
+                <p>scheduledPatients = dom appointment</p>
+
+                <h4>1.1.4 Example of Appointment State</h4>
+                <pre>
+scheduledPatients = { Hira, Sana, Zara }
+appointment = {
+    Hira ↦ 10:00AM,
+    Sana ↦ 03:00PM,
+    Zara ↦ 06:00PM
+}
+                </pre>
+
+                <h3>1.2 Operations on the Hospital Appointment Book</h3>
+
+                <h4>1.2.1 Operation: AddAppointment</h4>
+                <p>Adds a new appointment if the patient is not already scheduled.</p>
+
+                <h4>1.2.2 Operation: FindAppointment</h4>
+                <p>Finds the appointment time for an existing patient without changing the system state.</p>
+
+                <h4>1.2.3 Operation: UpdateAppointment</h4>
+                <p>Updates the appointment slot for an existing patient.</p>
+
+                <h4>1.2.4 Operation: ViewAppointments</h4>
+                <p>Views the appointment slot for a specific patient.</p>
+
+                <h4>1.2.5 Operation: CancelAppointment</h4>
+                <p>Cancels a patient’s appointment and removes them from the system.</p>
+
+                <h4>1.2.6 Initial State</h4>
+                <p>Initially, no patients or appointments are recorded (empty set).</p>
+
+                <h3>1.3 Strengthening the Specification</h3>
+                <p>Added an extra output 'result!' for better error handling:<br>REPORT ::= ok | already_scheduled |
+                    not_scheduled</p>
+
+                <h4>1.3.1 Success Schema</h4>
+                <p>Defines a schema where result! = ok upon successful operations.</p>
+
+                <h4>1.3.2 Robust AddAppointment Operation</h4>
+                <p>Details how to add appointments robustly, managing errors and maintaining the invariant.</p>
+            </section>
+        </main>
+        <br>
+        <a href="https://github.com/Hifza-Khalid/FormalMethodsInSE" target="_blank" class="github-button">View Project
+            on GitHub</a>
+    </div>
+</body>
+
+</html>
